@@ -1,0 +1,48 @@
+
+.button {
+  @include shadow;
+  background-color: transparent;
+  box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.6);
+  border: 3px solid white;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  letter-spacing: 6px;
+  padding-left: 60px; padding-right: 60px;
+  padding-top: 24px; padding-bottom: 24px;
+  margin-bottom: 30px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+.button-text {
+  position: relative;
+}
+.button:active {
+  .button-text {
+    animation: spintext .2s ease;
+    -webkit-animation: spintext .2s ease;
+  }
+}
+
+@keyframes spintext {
+    0%   {
+      top: 0px;
+      opacity: 1;
+    }
+    25% {
+      top: 30px;
+      opacity: 0;
+    }
+    50% {
+      top: -30px;
+      opacity: 0;
+    }
+    100% {
+      top: 0px;
+    }
+}

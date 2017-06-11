@@ -1,0 +1,50 @@
+@import "reset";
+@import "_mixin";
+@import "_button";
+@import "_results";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+
+
+body {
+  @include center;
+  flex-direction: column;
+  background: url('tv-shows.png');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Georgia', serif;
+  overflow-x: hidden;
+  height: 100vh; width: 100vw;
+  padding: 30px;
+  box-sizing: border-box;
+  background-attachment: fixed;
+}
+.title {
+  @include shadow;
+  color: white;
+  font-size: 54px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  transform: skewX(-11deg);
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .results-container {
+    width: 95%;
+    height: auto;
+    overflow: visible;
+    .results-info {
+      justify-content: space-around;
+    }
+  }
+  .results-poster {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .title {
+    margin-top: 60px; padding-top: 60px;
+  }
+}

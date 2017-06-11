@@ -1,0 +1,185 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.button {
+  text-shadow: 3px 4px 0px rgba(0, 0, 0, 0.6);
+  background-color: transparent;
+  box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.6);
+  border: 3px solid white;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  letter-spacing: 6px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */ }
+
+.button-text {
+  position: relative; }
+
+.button:active .button-text {
+  animation: spintext .2s ease;
+  -webkit-animation: spintext .2s ease; }
+
+@keyframes spintext {
+  0% {
+    top: 0px;
+    opacity: 1; }
+  25% {
+    top: 30px;
+    opacity: 0; }
+  50% {
+    top: -30px;
+    opacity: 0; }
+  100% {
+    top: 0px; } }
+.results-container {
+  background-color: white;
+  display: flex;
+  width: 540px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  position: relative;
+  visibility: hidden; }
+  .results-container .results-info {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column; }
+    .results-container .results-info b {
+      font-weight: bold;
+      background-color: yellow; }
+
+.results-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 5px; }
+
+.info-wrapper {
+  font-weight: bold;
+  font-size: 12px;
+  padding-top: 5px; }
+  .info-wrapper .network {
+    float: left; }
+  .info-wrapper .rating {
+    float: right; }
+
+.slide-class {
+  animation: slideresults 0.3s cubic-bezier(0.17, 0.67, 0.31, 0.89);
+  visibility: visible; }
+
+@keyframes slideresults {
+  0%,
+  100% {
+    top: 0px;
+    right: 0px;
+    visibility: hidden;
+    transform: skewX(0deg); }
+  50% {
+    right: 900px;
+    top: 50px;
+    visibility: visible;
+    transform: skewX(9deg); } }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("tv-shows.png");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Georgia', serif;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  padding: 30px;
+  box-sizing: border-box;
+  background-attachment: fixed; }
+
+.title {
+  text-shadow: 3px 4px 0px rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 54px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  transform: skewX(-11deg);
+  text-align: center;
+  padding-bottom: 20px; }
+
+@media screen and (max-width: 600px) {
+  .results-container {
+    width: 95%;
+    height: auto;
+    overflow: visible; }
+    .results-container .results-info {
+      justify-content: space-around; }
+
+  .results-poster {
+    display: none; } }
+@media screen and (max-width: 376px) {
+  .title {
+    margin-top: 60px;
+    padding-top: 60px; } }
+
+/*# sourceMappingURL=style.css.map */
