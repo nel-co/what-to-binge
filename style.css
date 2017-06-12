@@ -78,8 +78,8 @@ table {
   position: relative; }
 
 .button:active .button-text {
-  animation: spintext .2s ease;
-  -webkit-animation: spintext .2s ease; }
+  animation: spintext .3s ease;
+  -webkit-animation: spintext .3s ease; }
 
 @keyframes spintext {
   0% {
@@ -95,12 +95,14 @@ table {
     top: 0px; } }
 .results-container {
   background-color: white;
-  display: flex;
+  display: none;
   width: 540px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
   position: relative;
-  visibility: hidden; }
+  visibility: hidden;
+  min-height: 295px;
+  height: auto; }
   .results-container .results-info {
     padding: 15px;
     font-size: 14px;
@@ -108,8 +110,7 @@ table {
     display: flex;
     flex-direction: column; }
     .results-container .results-info b {
-      font-weight: bold;
-      background-color: yellow; }
+      font-weight: bold; }
 
 .results-title {
   font-size: 18px;
@@ -134,19 +135,17 @@ table {
   100% {
     top: 0px;
     right: 0px;
-    visibility: hidden;
-    transform: skewX(0deg); }
+    transform: rotateZ(0deg) skewX(0deg); }
   50% {
-    right: 900px;
+    right: 700px;
     top: 50px;
-    visibility: visible;
-    transform: skewX(9deg); } }
+    transform: rotateZ(-9deg) skewX(4deg); } }
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url("tv-shows.png");
+  background-image: url("tv-shows.png");
   background-size: cover;
   background-position: center;
   font-family: 'Georgia', serif;
@@ -156,6 +155,18 @@ body {
   padding: 30px;
   box-sizing: border-box;
   background-attachment: fixed; }
+
+.credits,
+.credits a {
+  margin-bottom: 15px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; }
+  .credits a,
+  .credits a a {
+    color: #1d1d1d;
+    background-color: yellow; }
 
 .title {
   text-shadow: 3px 4px 0px rgba(0, 0, 0, 0.6);
@@ -170,6 +181,7 @@ body {
 @media screen and (max-width: 600px) {
   .results-container {
     width: 95%;
+    min-height: 295px;
     height: auto;
     overflow: visible; }
     .results-container .results-info {

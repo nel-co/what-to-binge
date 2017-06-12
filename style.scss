@@ -4,11 +4,17 @@
 @import "_results";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900');
 
-
 body {
   @include center;
   flex-direction: column;
-  background: url('tv-shows.png');
+  // background:
+  //   linear-gradient(
+  //   hsla(245, 76, 91, .4),
+  //   hsla(245, 76, 91, .4)
+  //   ),
+  //   url('tv-shows.png');
+  //background-blend-mode: color-burn;
+  background-image: url('tv-shows.png');
   background-size: cover;
   background-position: center;
   font-family: 'Georgia', serif;
@@ -17,7 +23,21 @@ body {
   padding: 30px;
   box-sizing: border-box;
   background-attachment: fixed;
+  //transition: 3s ease;
 }
+.credits,
+.credits a {
+  margin-bottom: 15px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  a {
+    color: #1d1d1d;
+    background-color: yellow;
+  }
+}
+
 .title {
   @include shadow;
   color: white;
@@ -32,6 +52,7 @@ body {
 @media screen and (max-width: 600px) {
   .results-container {
     width: 95%;
+    min-height: 295px;
     height: auto;
     overflow: visible;
     .results-info {
