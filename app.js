@@ -14,7 +14,7 @@ resultsContainer.addEventListener('click', getShow);
 
 (function apiCall() {
   let pageNum = Math.floor(Math.random() * (5 - 0)) + 0;
-  fetch('https://api.tvmaze.com/shows?page=' + pageNum).then(function(response) {
+  fetch('//api.tvmaze.com/shows?page=' + pageNum).then(function(response) {
   	// Convert to JSON
   	return response.json();
   }).then(function(results) {
