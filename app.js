@@ -14,7 +14,7 @@ resultsContainer.addEventListener('click', getShow);
 
 (function apiCall() {
   let pageNum = Math.floor(Math.random() * (5 - 0)) + 0;
-  fetch('//api.tvmaze.com/shows?page=' + pageNum).then(function(response) {
+  fetch('https://api.tvmaze.com/shows?page=' + pageNum).then(function(response) {
   	// Convert to JSON
   	return response.json();
   }).then(function(results) {
@@ -36,7 +36,12 @@ function getShow() {
   } else {
     summary.innerHTML = tvShow.summary;
   }
-  resultPoster.src = tvShow.image.medium;
+
+  let posterUrl = tvShow.image.medium;
+  let sLetter = 's';
+  let newUrl = [posterUrl.slice(0,4), sLetter, posterUrl.slice(4)].join('');
+  resultPoster.src = newUrl;
+
   (tvShow.network.name == null || tvShow.network.name == undefined) ? network.innerHTML = '' : network.innerHTML = tvShow.network.name;
   tvShow.name == null ? resultTitle.innerText = '' : resultTitle.innerText = tvShow.name;
   tvShow.rating.average == null ? rating.innerText = 'unrated' : rating.innerText = tvShow.rating.average + '/10';
